@@ -1,0 +1,16 @@
+<aura:component controller="ListViewData" implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" >
+	
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <aura:attribute name="listViewData" type="string[]" />
+    <aura:attribute name="objectInfo" type="String" default="Contact" />
+    <aura:attribute name="currentListViewName" type="String" />
+    <aura:attribute name="displaylistView" type="Boolean" default="false" />
+    
+    <!-- Dropdown to show the types of list view of object -->
+    <lightning:select name="select1" onchange="{!c.onPicklistChange}" label="Object List View" class="customCls">
+    	<aura:iteration items="{!v.listViewData}" var="lv">
+            <option value="{!lv.developerName}">{!lv.label}</option>
+        </aura:iteration>
+    </lightning:select>
+</aura:component>

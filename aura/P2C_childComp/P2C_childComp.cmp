@@ -1,0 +1,11 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:method name="handleParentCom" action="{!c.doAction}" description="Method to handle values from Parent" />
+    <aura:attribute name="firstName" type="String" />
+    <aura:attribute name="param1" type="String" default="parameter 1" />
+    <aura:attribute name="showChild" type="Boolean" default="false" />
+    <aura:if isTrue="{!v.showChild}">
+        <div class="slds-card slds-p-around_medium">
+            <h2> Value from Parent: <b>{!v.firstName}</b></h2>
+        </div>
+    </aura:if>
+</aura:component>

@@ -1,0 +1,10 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:attribute name="input" type="String" />
+    
+    <div class="slds-card slds-p-around_medium">
+        <c:P2C_childComp aura:id="child" />
+        <lightning:input aura:id="inp1" label="Enter First Name:" value="{!v.input}" />
+        <lightning:button label="Call Child" onclick="{!c.handleClick}" />
+        
+    </div>
+</aura:component>
